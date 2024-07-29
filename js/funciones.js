@@ -52,32 +52,38 @@ Funcion para que el video solo se de play cuando se hace hover
 
 */
 
-const iframe = document.querySelectorAll("iframe");
+const iframes = document.querySelectorAll("iframe");
 
-iframe.forEach(iframe =>{
-
+iframes.forEach(iframe => {
     const player = new Vimeo.Player(iframe);
 
     player.pause();
 
     iframe.addEventListener("mouseenter", function() {
-        player.play();
+        player.play().catch(function(error) {
+            console.error('Error playing video on mouseenter:', error);
+        });
     });
 
     iframe.addEventListener("click", function() {
         player.getPaused().then(function(paused) {
             if (paused) {
-                player.play();
+                player.play().catch(function(error) {
+                    console.error('Error playing video on click:', error);
+                });
             } else {
-                player.pause();
+                player.pause().catch(function(error) {
+                    console.error('Error pausing video on click:', error);
+                });
             }
         }).catch(function(error) {
-            console.error('Error toggling play/pause:', error);
+            console.error('Error getting paused state:', error);
         });
     });
 
     iframe.addEventListener("mouseleave", function() {
-        player.pause();
+        player.pause().catch(function(error) {
+            console.error('Error pausing video on mouseleave:', error);
+        });
     });
-
 });
