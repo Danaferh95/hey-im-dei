@@ -33,38 +33,29 @@ btnNav.forEach((obj) => {
     });
 }); 
 
-/* Function to play the video only when hovered or clicked */
+/* Funcion para dar play a los videos */
 
 const iframes = document.querySelectorAll("iframe");
 
 iframes.forEach(iframe => {
     const player = new Vimeo.Player(iframe);
 
-    iframe.addEventListener("mouseenter", function() {
+    function playVideo() {
         player.play().catch(function(error) {
-            console.error('Error playing video on mouseenter:', error);
+            console.error('Error playing video:', error);
         });
-    });
+    }
 
-    iframe.addEventListener("click", function() {
-        player.getPaused().then(function(paused) {
-            if (paused) {
-                player.play().catch(function(error) {
-                    console.error('Error playing video on click:', error);
-                });
-            } else {
-                player.pause().catch(function(error) {
-                    console.error('Error pausing video on click:', error);
-                });
-            }
-        }).catch(function(error) {
-            console.error('Error getting paused state:', error);
-        });
-    });
-
-    iframe.addEventListener("mouseleave", function() {
+    function pauseVideo() {
         player.pause().catch(function(error) {
-            console.error('Error pausing video on mouseleave:', error);
+            console.error('Error pausing video:', error);
         });
-    });
+    }
+
+    iframe.addEventListener("mouseenter", playVideo);
+    iframe.addEventListener("mouseleave", pauseVideo);
+
+    // Para mobil
+    iframe.addEventListener("touchstart", playVideo);
+    iframe.addEventListener("touchend", pauseVideo);
 });
