@@ -40,13 +40,19 @@ gridItems.forEach(item => {
     const video = item.querySelector("video");
 
     function playVideo() {
-       // console.log('Playing video');
-        video.play();
+        // console.log('Playing video');
+        video.play().catch(function(error) {
+            console.error('Error playing video:', error);
+        });
     }
 
     function pauseVideo() {
-       // console.log('Pausing video');
-        video.pause();
+        // console.log('Pausing video');
+        if (!video.paused) {
+            video.pause().catch(function(error) {
+                console.error('Error pausing video:', error);
+            });
+        }
     }
 
     item.addEventListener("mouseenter", playVideo);
@@ -54,17 +60,17 @@ gridItems.forEach(item => {
 
     // Add touch events for mobile devices if touch is supported
     if ('ontouchstart' in window || navigator.maxTouchPoints) {
-        //console.log('Touch events supported');
+        // console.log('Touch events supported');
         item.addEventListener("touchstart", function(event) {
             event.preventDefault();
-            //console.log('Touch start');
+            // console.log('Touch start');
             playVideo();
         });
 
         item.addEventListener("touchend", function(event) {
             event.preventDefault();
-            //console.log('Touch end');
-            pauseVideo();
+            // console.log('Touch end');
+            setTimeout(pauseVideo, 100); // Adding a slight delay to prevent conflict
         });
     }
 });
