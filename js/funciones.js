@@ -52,17 +52,19 @@ Funcion para que el video solo se de play cuando se hace hover
 
 */
 
-const videoContainers = document.querySelectorAll(".video-container");
+const iframe = document.querySelectorAll("iframe");
 
-videoContainers.forEach(container => {
-    const iframe = container.querySelector("iframe");
+iframe.forEach(iframe =>{
+
     const player = new Vimeo.Player(iframe);
 
-    container.addEventListener("mouseenter", function() {
+
+    iframe.addEventListener("mouseenter", function() {
         player.play();
     });
 
-    container.addEventListener("mouseleave", function() {
+    iframe.addEventListener("mouseleave", function() {
         player.pause();
     });
+
 });
