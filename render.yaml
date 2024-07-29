@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: hey-im-dei
+    env: static
+    staticPublishPath: public
+    headers:
+      "/**":
+        Content-Security-Policy: "default-src 'self'; script-src 'self' https://player.vimeo.com; frame-src 'self' https://player.vimeo.com; style-src 'self' 'unsafe-inline'; object-src 'none';"

@@ -1,10 +1,7 @@
-
-
-/*Función para mover la posición del scroll con más precisión dentro de la web*/
+/* Function to precisely move the scroll position within the web page */
 
 const links = document.querySelectorAll("a");
-const offset = 100; //Pixeles a mover
-
+const offset = 100; // Pixels to move
 
 links.forEach(link => {
     link.addEventListener("click", function(event) {
@@ -21,43 +18,27 @@ links.forEach(link => {
     });
 });
 
-
-
 /*--------------------------------------------------------
-
-	MENU DESPLEGABLE
-		
-	En esta sección hacemos el toggle del menu principal, donde se vuelve 
-	un menu hamburguesa cuando el dispositivo es pequeño
-
+    MENU TOGGLE
+    This section toggles the main menu, turning it into 
+    a hamburger menu when the device is small
 --------------------------------------------------------*/
 
 const navegacion = document.querySelector("nav"); 
 const btnNav = document.querySelectorAll(".abrir , .cerrar"); 
 
-
-btnNav.forEach((obj)=>{
-
-	obj.addEventListener("click",()=>{
-		navegacion.classList.toggle("desplegado");
-	});
-
-
+btnNav.forEach((obj) => {
+    obj.addEventListener("click", () => {
+        navegacion.classList.toggle("desplegado");
+    });
 }); 
 
-
-/*
-
-Funcion para que el video solo se de play cuando se hace hover
-
-*/
+/* Function to play the video only when hovered or clicked */
 
 const iframes = document.querySelectorAll("iframe");
 
 iframes.forEach(iframe => {
     const player = new Vimeo.Player(iframe);
-
-    player.pause();
 
     iframe.addEventListener("mouseenter", function() {
         player.play().catch(function(error) {
