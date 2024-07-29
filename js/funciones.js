@@ -41,14 +41,14 @@ gridItems.forEach(item => {
     const player = new Vimeo.Player(iframe);
 
     function playVideo() {
-        console.log('Playing video');
+      
         player.play().catch(function(error) {
             console.error('Error playing video:', error);
         });
     }
 
     function pauseVideo() {
-        console.log('Pausing video');
+      
         player.pause().catch(function(error) {
             console.error('Error pausing video:', error);
         });
@@ -61,12 +61,12 @@ gridItems.forEach(item => {
     if ('ontouchstart' in window || navigator.maxTouchPoints) {
         console.log('Touch events supported');
         item.addEventListener("touchstart", function(event) {
-            console.log('Touch start');
+         
             playVideo();
         });
 
         item.addEventListener("touchend", function(event) {
-            console.log('Touch end');
+          
             pauseVideo();
         });
     }
