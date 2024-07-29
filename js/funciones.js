@@ -64,6 +64,18 @@ iframe.forEach(iframe =>{
         player.play();
     });
 
+    iframe.addEventListener("click", function() {
+        player.getPaused().then(function(paused) {
+            if (paused) {
+                player.play();
+            } else {
+                player.pause();
+            }
+        }).catch(function(error) {
+            console.error('Error toggling play/pause:', error);
+        });
+    });
+
     iframe.addEventListener("mouseleave", function() {
         player.pause();
     });
