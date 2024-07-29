@@ -33,29 +33,41 @@ btnNav.forEach((obj) => {
     });
 }); 
 
-/* Funcion para dar play a los videos */
+/* Functions to play the videos*/
+const gridItems = document.querySelectorAll(".grid-item");
 
-const iframes = document.querySelectorAll("iframe");
-
-iframes.forEach(iframe => {
+gridItems.forEach(item => {
+    const iframe = item.querySelector("iframe");
     const player = new Vimeo.Player(iframe);
 
     function playVideo() {
+        console.log('Playing video');
         player.play().catch(function(error) {
             console.error('Error playing video:', error);
         });
     }
 
     function pauseVideo() {
+        console.log('Pausing video');
         player.pause().catch(function(error) {
             console.error('Error pausing video:', error);
         });
     }
 
-    iframe.addEventListener("mouseenter", playVideo);
-    iframe.addEventListener("mouseleave", pauseVideo);
+    item.addEventListener("mouseenter", playVideo);
+    item.addEventListener("mouseleave", pauseVideo);
 
-    // Para mobil
-    iframe.addEventListener("touchstart", playVideo);
-    iframe.addEventListener("touchend", pauseVideo);
+    // Add touch events for mobile devices if touch is supported
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+        console.log('Touch events supported');
+        item.addEventListener("touchstart", function(event) {
+            console.log('Touch start');
+            playVideo();
+        });
+
+        item.addEventListener("touchend", function(event) {
+            console.log('Touch end');
+            pauseVideo();
+        });
+    }
 });
