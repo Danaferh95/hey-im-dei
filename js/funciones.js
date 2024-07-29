@@ -58,6 +58,7 @@ iframe.forEach(iframe =>{
 
     const player = new Vimeo.Player(iframe);
 
+    player.pause();
 
     iframe.addEventListener("mouseenter", function() {
         player.play();
