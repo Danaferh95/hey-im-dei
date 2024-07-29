@@ -33,23 +33,22 @@ btnNav.forEach((obj) => {
     });
 }); 
 
-/* Functions to play the videos*/
+/* Functions to play the videos */
 const gridItems = document.querySelectorAll(".grid-item");
 
 gridItems.forEach(item => {
-    const iframe = item.querySelector("iframe");
-    const player = new Vimeo.Player(iframe);
+    const video = item.querySelector("video");
 
     function playVideo() {
-      
-        player.play().catch(function(error) {
+        console.log('Playing video');
+        video.play().catch(function(error) {
             console.error('Error playing video:', error);
         });
     }
 
     function pauseVideo() {
-      
-        player.pause().catch(function(error) {
+        console.log('Pausing video');
+        video.pause().catch(function(error) {
             console.error('Error pausing video:', error);
         });
     }
@@ -61,12 +60,12 @@ gridItems.forEach(item => {
     if ('ontouchstart' in window || navigator.maxTouchPoints) {
         console.log('Touch events supported');
         item.addEventListener("touchstart", function(event) {
-         
+            console.log('Touch start');
             playVideo();
         });
 
         item.addEventListener("touchend", function(event) {
-          
+            console.log('Touch end');
             pauseVideo();
         });
     }
