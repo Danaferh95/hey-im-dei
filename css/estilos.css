@@ -14,24 +14,20 @@ body{
     height: 100vh;
     background-color: var(--white);
     position: relative;
-    
 }
 
 
 
 nav{
-
-width: 249px;
-height: calc(100vh - 100px);
-position: fixed;
-top: 100px;
-border-right: 1px solid var(--black);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 1.5em;
-
-
+    width: 249px;
+    height: calc(100vh - 100px);
+    position: fixed;
+    top: 100px;
+    border-right: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
 }
 
 nav ul {
@@ -48,12 +44,10 @@ nav a{
     text-decoration: none;
     margin-bottom: 0;
     padding: 10px;
-   
     transition: 200ms;
 }
 .desplegado{
     top: 100px;
-    
 }
 
 
@@ -64,13 +58,7 @@ nav a:hover{
 }
 
 
-nav li{
-}
-
-
-
 header{
-    
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -84,7 +72,6 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-
 }
 
 header>div{
@@ -96,13 +83,10 @@ header>div{
 
 header img{
   height: 50px;
-
 }
 footer{
-
-height: 100px;
-
-background-color: var(--black);
+    height: 100px;
+    background-color: var(--black);
 }
 
 
@@ -113,7 +97,6 @@ button{
 	border:none;
 	background-color: transparent;
 	cursor: pointer;
-
 }
 
 
@@ -124,38 +107,27 @@ button{
 
 
 section{
-
-box-sizing: border-box;
-
-min-height: calc(100vh - 100px);
-
-width: calc(100vw - 260px);
-
-position: relative;
-
-top: 100px;
-
-left: 250px;
-
-padding: 50px;
-
-overflow-y: auto;
-
-margin-bottom: 150px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 100px);
+    width: calc(100vw - 260px);
+    position: relative;
+    top: 100px;
+    left: 250px;
+    padding: 50px;
+    overflow-y: auto;
+    margin-bottom: 150px;
 }
 
 section h2{
-
-margin: 100px 0;
-
-font-size: 4em;
+    margin: 100px 0;
+    font-size: 4em;
 }
 
 
 .grid-content{
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .grid-item{
@@ -181,9 +153,18 @@ gap: 5px;
    
 }
 
-iframe{
+video{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;  
+    -webkit-user-drag: none; 
+    user-select: none;
+}
+
+/*iframe{
     pointer-events: none;
 }
+*/
+
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -261,15 +242,11 @@ iframe{
 
 @media (max-width: 600px) {
     .grid-content{
-
         grid-template-columns: repeat(1, 1fr);
-
     }
   
     header h1{
-
         display: none;
-
     }
 
     header>div{
