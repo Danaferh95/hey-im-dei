@@ -35,25 +35,20 @@ btnNav.forEach((obj) => {
 
 
 /* Functions to play the videos */
-const gridItems = document.querySelectorAll(".grid-item");
+
+const videos = document.querySelectorAll("video");
 let currentPlayingVideo = null;
 
-gridItems.forEach(item => {
-    const video = item.querySelector("video");
+videos.forEach(video => {
 
     function playVideo() {
         // Pause the currently playing video if it's different from the one being played
         if (currentPlayingVideo && currentPlayingVideo !== video) {
-            currentPlayingVideo.pause().catch(function(error) {
-                console.error('Error pausing video:', error);
-            });
+            currentPlayingVideo.pause();
         }
 
         // Play the new video
-        video.play().catch(function(error) {
-            console.error('Error playing video:', error);
-        });
-
+        video.play();
         // Update the current playing video
         currentPlayingVideo = video;
     }
@@ -61,18 +56,17 @@ gridItems.forEach(item => {
     function pauseVideo() {
         // Only pause if this video is the currently playing one
         if (currentPlayingVideo === video) {
-            video.pause().catch(function(error) {
-                console.error('Error pausing video:', error);
-            });
-            currentPlayingVideo = null; // Reset the current playing video
-        }
+            video.pause();
+         };
+            currentPlayingVideo = null; 
     }
+  
 
-    item.addEventListener("mouseenter", playVideo);
-    item.addEventListener("mouseleave", pauseVideo);
+    video.addEventListener("mouseenter", playVideo);
+    video.addEventListener("mouseleave", pauseVideo);
 
-    item.addEventListener("touchstart", function(event) {
+    video.addEventListener("touchstart", function(event) {
         playVideo();
     });
-    
+
 });
