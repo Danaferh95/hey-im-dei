@@ -71,15 +71,8 @@ gridItems.forEach(item => {
     item.addEventListener("mouseenter", playVideo);
     item.addEventListener("mouseleave", pauseVideo);
 
-   
-    if ('ontouchstart' in window || navigator.maxTouchPoints) {
-        // console.log('Touch events supported');
-        item.addEventListener("touchstart", function(event) {
-            playVideo();
-        });
-
-        item.addEventListener("touchend", function(event) {
-            setTimeout(pauseVideo, 100); // Adding a slight delay to prevent conflict
-        });
-    }
+    item.addEventListener("touchstart", function(event) {
+        playVideo();
+    });
+    
 });
