@@ -1,6 +1,8 @@
-/* Function to precisely move the scroll position within the web page */
+/*--------------------------------------------------------
+ Function to precisely move the scroll position within the web page 
+ --------------------------------------------------------*/
 
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll("nav a");
 const offset = 100; // Pixels to move
 
 links.forEach(link => {
@@ -34,7 +36,9 @@ btnNav.forEach((obj) => {
 }); 
 
 
-/* Functions to play the videos */
+/*--------------------------------------------------------
+Function to play the videos
+ --------------------------------------------------------*/
 
 const videos = document.querySelectorAll("video");
 let currentPlayingVideo = null;
@@ -69,4 +73,30 @@ videos.forEach(video => {
         playVideo();
     });
 
+     // Prevent context menu from appearing on long press
+     video.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+    
 });
+
+/*--------------------------------------------------------
+Function to switch the href as needed in the UX/UI section
+ --------------------------------------------------------*/
+
+ const hrefs = document.querySelectorAll(".dynamicLink");
+
+    function isMobile() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+    }
+
+    hrefs.forEach(link => {
+        const desktopLink = link.getAttribute("data-desktop");
+        const mobileLink = link.getAttribute("data-mobile");
+
+        if (isMobile()) {
+            link.href = mobileLink;
+        } else {
+            link.href = desktopLink;
+        }
+    });
