@@ -1,0 +1,267 @@
+:root{
+    --black : #1F1D1D;
+    --white : #FBFCFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family:'Century Gothic';
+}
+
+
+
+
+body{
+    background-color: var(--white);
+   min-height: 100vh;
+}
+
+button{
+    -webkit-appearance: none;
+    appearance: none; 
+    padding: 10px;    
+    pointer-events: auto;
+    cursor: pointer;  
+    margin: 10px 0; 
+    font-size: 1.3em;
+}
+
+.btn_1{
+    color: var(--black);
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    transition: 200ms;
+}
+
+
+.btn_1:hover{
+    color:var(--white);
+    background-color: var(--black);
+
+}
+header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--white);
+    mix-blend-mode: difference;
+    position: fixed;
+}
+
+nav{
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 0;
+    transition: 200ms;
+    padding-bottom:0;
+}
+
+nav ul li a:hover{
+    border-bottom: 1px solid var(--black);
+    padding-bottom:5px;
+}
+
+section{
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
+    color: var(--black);
+}
+
+.sect1-top{
+    width: 100%;
+    max-width: 865px;
+}
+
+.sect1-top div{     
+    text-align: right;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.sect1-top div:first-child{
+    font-size: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sect1-top div:nth-child(2){
+    text-align: left;
+    font-size: 2em;
+}
+
+
+.sect1-top img{
+
+}
+
+.sect1-bottom{
+    width: 100%;
+    max-width: 865px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 350px;
+}
+
+.sect1-bottom>div:first-child{
+    flex: 1;
+}
+
+.sect1-bottom>div:first-child div{
+    text-align: center;
+}
+
+.sect1-bottom>div:first-child div h3{
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+.sect1-bottom>div:first-child div h3:nth-child(2){
+    box-sizing: border-box;
+    padding-left: 15%;
+}
+
+.sect1-bottom>div:first-child div h1{
+    font-size: 3em;
+}
+
+.sect1-bottom>div:last-child{
+    flex: 2;
+    height: 100%;
+    border: 1px solid var(--black);
+}
+
+.sect2 {
+    height: 300vh;
+}
+
+.sect2-top{
+
+
+}
+
+.sect2-top p{
+    font-size: 4em;
+    margin: 25px 0;
+    width: 80%;
+}
+
+
+
+
+.sect3{
+    position: relative;
+}
+
+.sect3-top{
+    color: var(--white);
+    mix-blend-mode: exclusion;
+}
+
+.sect3-top p{
+    font-size: 1.5em;
+}
+
+.sect3-top p:first-child{
+    width: 40%;
+}
+
+.sect3-top p:last-child{
+    text-align:end;
+ }
+
+.sect3-top h2{
+    font-size: 5em;
+}
+
+.rect{
+    background-color: var(--white);
+    mix-blend-mode: difference;
+    position: absolute;
+    z-index: -1;
+}
+
+.r1{
+    width: 30%;
+    height: 30%;
+    top: 0;
+    left: 0;
+}
+
+.r2{    
+    height: 30%;
+    width: 60%; 
+    top: 0; 
+    right: 0;
+}
+
+.r3{   
+    height: 50%;  
+    width: 50%;  
+    left: 0;   
+    top: 30%;
+}
+
+.r4{ 
+    height: 20%;   
+    width: 70%;
+    right: 0;
+    bottom: 0;
+}
+
+.works{
+    flex-direction: row;
+    padding: 0;
+}
+
+.works-descript{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works-descript div{
+    width: 60%;
+}
+
+.works-descript div h2{
+    
+font-size: 3em;
+}
+
+.works-descript div p{
+  
+font-size: 1.5em;
+}
+
+
+
+.works-example{
+    width: 60%;
+    border: 1px solid var(--black);
+    margin-top: 80px;
+    height: calc(100% - 82px);
+}

@@ -3,7 +3,7 @@
  --------------------------------------------------------*/
 
 const links = document.querySelectorAll("nav a");
-const offset = 100; // Pixels to move
+const offset = 0; // Pixels to move
 
 links.forEach(link => {
     link.addEventListener("click", function(event) {
@@ -100,3 +100,129 @@ Function to switch the href as needed in the UX/UI section
             link.href = desktopLink;
         }
     });
+
+
+
+/*-----------------------------------
+
+GSAP Animations on first section
+
+-----------------------------------*/
+
+    gsap.from("header",{
+        y: -200,
+
+    })
+
+    gsap.from(".sect1-bottom",{
+        y: 1000,
+        duration: 0.8
+    })
+
+    gsap.from(".sect1-top div:first-child h2",{
+        x: 1000,
+        duration: 1
+
+    })
+
+    gsap.from(".sect1-top div:last-child h2",{
+        x: 1000,
+        duration: 1.5
+
+    })
+
+    gsap.from(".sect1-top div:nth-child(2) h2",{
+        x: -1000,
+        duration: 1
+
+    })
+
+    
+
+/*-----------------------------------
+
+GSAP ScrollTrigger
+
+-----------------------------------*/
+
+gsap.registerPlugin(ScrollTrigger);
+
+const splitTypes = document.querySelectorAll(".reveal-p");
+
+splitTypes.forEach((word,i) =>{
+    const text = new SplitType(word, {types : 'words'});
+
+    gsap.from(text.words, {
+        scrollTrigger:{
+            trigger: word,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true,
+            markers: false,
+            
+        },
+
+        opacity: 0.1,
+        stagger: 0.1
+    })
+})
+
+/*------------------------------
+
+Rectangle Positions on section 3
+
+------------------------*/
+
+const leftRects = [document.querySelector(".r1"), document.querySelector(".r3")];
+const rightRects = [document.querySelector(".r2"), document.querySelector(".r4")];
+
+leftRects.forEach(rect =>{
+    gsap.from(rect,{
+        scrollTrigger:{
+            trigger: rect,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true
+        },
+    
+        x : -1000,
+        duration: 1
+    })
+})
+
+rightRects.forEach(rect =>{
+    gsap.from(rect,{
+        scrollTrigger:{
+            trigger: rect,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true
+        },
+    
+        x : 1000,
+        duration: 1
+    })
+})
+
+
+
+
+ /* --------------------------
+
+Llamamos a la librería de Lenis para activar el smooth scroll
+
+ -------------------*/
+
+
+    const lenis = new Lenis()
+
+    lenis.on('scroll', (e) => {
+    console.log(e)
+    })
+
+    function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
