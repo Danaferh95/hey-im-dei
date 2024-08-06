@@ -167,6 +167,9 @@ splitTypes.forEach((word,i) =>{
     })
 })
 
+
+
+
 /*------------------------------
 
 Rectangle Positions on section 3
@@ -217,7 +220,7 @@ Llamamos a la librería de Lenis para activar el smooth scroll
     const lenis = new Lenis()
 
     lenis.on('scroll', (e) => {
-    console.log(e)
+   // console.log(e)
     })
 
     function raf(time) {
