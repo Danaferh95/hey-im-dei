@@ -49,6 +49,7 @@ header{
     background-color: var(--white);
     mix-blend-mode: difference;
     position: fixed;
+    z-index: 10;
 }
 
 nav{
@@ -169,10 +170,13 @@ section{
 }
 
 
-
+.swipe-section{
+    position: relative;
+}
 
 .sect3{
-    position: relative;
+    /* position: sticky; */
+    background-color: var(--white);
 }
 
 .sect3-top{
@@ -234,6 +238,7 @@ section{
 .works{
     flex-direction: row;
     padding: 0;
+    background-color: var(--white);
 }
 
 .works-descript{
@@ -262,6 +267,14 @@ font-size: 1.5em;
 .works-example{
     width: 60%;
     border: 1px solid var(--black);
-    margin-top: 80px;
-    height: calc(100% - 82px);
+    height: 100%;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+.contact{
+    
+background-color: var(--white);    
+mix-blend-mode: difference;
 }

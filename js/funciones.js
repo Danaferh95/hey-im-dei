@@ -147,6 +147,9 @@ GSAP ScrollTrigger
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+// We split the words in the parragraph 
+
 const splitTypes = document.querySelectorAll(".reveal-p");
 
 splitTypes.forEach((word,i) =>{
@@ -167,9 +170,30 @@ splitTypes.forEach((word,i) =>{
     })
 })
 
+const panels = Array.from(document.querySelectorAll('.swipe-section section'));
 
+const createScrollParallax = () => {
+    panels.forEach((panel, i) => {
+        const isLast = i === panels.length - 1; // Identify the last panel in the original order
 
+        // Set z-index so panels stack correctly
+        gsap.set(panel, { zIndex: i + 1 });
 
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: panel,
+                start: 'top top', // Start pinning when the top of the panel hits the top of the viewport
+                end: isLast ? 'bottom bottom' : `+=${panel.offsetHeight}`, // For the last panel, end when it fully scrolls out of view
+                scrub: 1,
+                pin: true, // Pin each panel
+                pinSpacing: isLast, // Add spacing after the last panel to transition to normal scrolling
+                markers: false,
+            }
+        });
+    });
+};
+
+createScrollParallax();
 /*------------------------------
 
 Rectangle Positions on section 3
@@ -183,7 +207,7 @@ leftRects.forEach(rect =>{
     gsap.from(rect,{
         scrollTrigger:{
             trigger: rect,
-            start: 'top 80%',
+            start: 'top 100%',
             end: 'top 20%',
             scrub: true
         },
@@ -197,8 +221,8 @@ rightRects.forEach(rect =>{
     gsap.from(rect,{
         scrollTrigger:{
             trigger: rect,
-            start: 'top 80%',
-            end: 'top 20%',
+            start: 'top 100%',
+            end: 'top 0%',
             scrub: true
         },
     
