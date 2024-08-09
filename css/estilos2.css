@@ -1,6 +1,8 @@
 :root{
     --black : #000000;
     --white : #FBFCFF;
+    --blend-mode: difference;
+    --bg-color: var(--white);
 }
 
 *{
@@ -9,11 +11,8 @@
     font-family:'Century Gothic';
 }
 
-
-
-
 body{
-    background-color: var(--white);
+    background-color: var(--bg-color);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -35,22 +34,31 @@ button{
     transition: 200ms;
 }
 
-
 .btn_1:hover{
     color:var(--white);
     background-color: var(--black);
-
 }
+
+/* Utility classes */
+.blend-diff {
+    mix-blend-mode: var(--blend-mode);
+}
+
+.bg-white {
+    background-color: var(--bg-color);
+}
+
+/* Header styles */
 header{
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-color: var(--white);
-    mix-blend-mode: difference;
     position: fixed;
     z-index: 10;
+    background-color: var(--bg-color);
+    mix-blend-mode: var(--blend-mode);
 }
 
 nav{
@@ -88,8 +96,7 @@ nav ul li a:hover{
 	display: none;
 }
 
-
-
+/* Section styles */
 section{
     box-sizing: border-box;
     height: 100vh;
@@ -122,7 +129,6 @@ section{
     text-align: left;
     font-size: 2em;
 }
-
 
 .sect1-bottom{
     width: 100%;
@@ -165,33 +171,27 @@ section{
     height: 300vh;
 }
 
-.sect2-top{
-
-
-}
-
 .sect2-top p{
     font-size: 4em;
     margin: 25px 0;
     width: 80%;
 }
 
-
+/* Applying utility classes */
 .swipe-section{
     position: relative;
 }
 
-.sect3{
-    overflow: hidden;
-    background-color: var(--white);
+.sect3, .works, .contact {
+    background-color: var(--bg-color);
 }
 
-.sect3-top{
+.sect3-top {
     color: var(--white);
     mix-blend-mode: exclusion;
 }
 
-.sect3-top p{
+.sect3-top p {
     font-size: 1.5em;
 }
 
@@ -201,15 +201,15 @@ section{
 
 .sect3-top p:last-child{
     text-align:end;
- }
+}
 
 .sect3-top h2{
     font-size: 5em;
 }
 
 .rect{
-    background-color: var(--white);
-    mix-blend-mode: difference;
+    background-color: var(--bg-color);
+    mix-blend-mode: var(--blend-mode);
     position: absolute;
     z-index: -1;
 }
@@ -237,7 +237,7 @@ section{
 
 .r4{ 
     height: 20%;   
-    width: 70%;
+    width: 100%;
     right: 0;
     bottom: 0;
 }
@@ -245,7 +245,6 @@ section{
 .works{
     flex-direction: row;
     padding: 0;
-    background-color: var(--white);
 }
 
 .works-descript{
@@ -260,16 +259,12 @@ section{
 }
 
 .works-descript div h2{
-    
-font-size: 3em;
+    font-size: 3em;
 }
 
 .works-descript div p{
-  
-font-size: 1.5em;
+    font-size: 1.5em;
 }
-
-
 
 .works-example{
     width: 60%;
@@ -280,18 +275,8 @@ font-size: 1.5em;
 .reverse{
     flex-direction: row-reverse;
 }
-.contact{
-    
-background-color: var(--white);    
-mix-blend-mode: difference;
-}
 
-
-
-
-/*---------------MEDIA QUERIES TABLET-------------------*/
-
-
+/* Media Queries */
 @media (max-width: 700px) {
 
     header{
@@ -310,9 +295,8 @@ mix-blend-mode: difference;
     }
 
     nav ul{
-        
-flex-direction: column;
-padding: 20px 0;
+        flex-direction: column;
+        padding: 20px 0;
     }
 
     section{
@@ -332,18 +316,12 @@ padding: 20px 0;
 	}
 
     .abrir{
-		
-border-radius: 5px;
-		
-display: block;
-		
-width: 35px;
-		
-padding:5px 5px 0;
-		
-cursor: pointer;
-		
-margin-right: 20px;
+		border-radius: 5px;
+		display: block;
+		width: 35px;
+		padding:5px 5px 0;
+		cursor: pointer;
+		margin-right: 20px;
 	}
 
 	.abrir span{
@@ -379,36 +357,24 @@ margin-right: 20px;
     }
 
     .sect1-top div:first-child {
-
         font-size: 2.2em;
     }
 
     .sect1-top div:nth-child(2) {
-
-font-size: 0.8em;
-
-}
+        font-size: 0.8em;
+    }
 
     .sect1-top div {
-
-font-size: .6em;
-
-}
-
-
+        font-size: .6em;
+    }
 
     .sect1-bottom{
-    flex-direction: column;
-    margin: 20px 0px;
+        flex-direction: column;
+        margin: 20px 0px;
     }
 }
 
-
-/*---------------MEDIA QUERIES MOBILE-------------------*/
-
-
 @media (max-width: 500px) {
-
 
     .sect2-top p{
         font-size:1.5em;

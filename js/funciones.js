@@ -208,7 +208,7 @@ leftRects.forEach(rect =>{
         scrollTrigger:{
             trigger: rect,
             start: 'top 100%',
-            end: 'top 20%',
+            end: 'top 50%',
             scrub: true
         },
     
@@ -222,11 +222,11 @@ rightRects.forEach(rect =>{
         scrollTrigger:{
             trigger: rect,
             start: 'top 100%',
-            end: 'top 0%',
+            end: 'top 50%',
             scrub: true
         },
     
-        x : 1000,
+        x : 500,
         duration: 1
     })
 })
