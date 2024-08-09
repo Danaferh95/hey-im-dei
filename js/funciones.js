@@ -253,3 +253,6 @@ Llamamos a la librería de Lenis para activar el smooth scroll
     }
 
     requestAnimationFrame(raf)
+
+
+    
