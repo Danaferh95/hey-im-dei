@@ -255,4 +255,72 @@ Llamamos a la librería de Lenis para activar el smooth scroll
     requestAnimationFrame(raf)
 
 
-    
+    /*----------------------
+    Lottie animation
+
+    ----------------*/
+
+    let lottieContainer= document.querySelectorAll(".animation");
+
+    if(lottieContainer) {
+        LottieScrollTrigger({
+            trigger: '.animation',
+            start: 'top center',
+            endTrigger : '.end-lottie',
+            end: `bottom center +=${
+                document.querySelector('.animation').offsetHeight
+            }`,
+            renderer: 'svg',
+            target: '.animation',
+            path: './sources/square.mp4.lottie.json',
+            scrub: 0.1,
+        });
+    }
+
+
+    function LottieScrollTrigger(vars){
+        let playhead = {frame : -60},
+        target = gsap.utils.toArray(vars.target)[0],
+        speeds = {slow: '+=2000', medium: '+=1000', fast: '+=500'},
+        st = {
+            trigger: '.trigger',
+            end: speeds[vars.speed] || '+=1000',
+            scrub: 0.5,
+            markers: false,
+        },
+
+        ctx = gsap.context && gsap.context(),
+        animation = lottie.loadAnimation({
+            container: target,
+            renderer: vars.renderer || 'svg',
+            loop: false,
+            autplay: false,
+            path: vars.path,
+            rendererSettings: vars.rendererSettings  ||{
+                preserveAspectRatio: 'xMidYMid slice',
+                progressiveLoad: true, // Load frames progressively for smoother rendering
+                clearCanvas: false, // Prevent flickering in some cases
+            },
+        });
+
+        for(let p in vars) {
+            st[p] = vars[p];
+        }
+
+        animation.addEventListener("DOMLoaded", function () {
+            let createTween = function () {
+                animation.frameTrween = gsap.to(playhead, {
+                    frame: animation.totalFrames - 1,
+                    ease: 'power1.inOut', // Smoother easing
+                    onUpdate: () => animation.goToAndStop(playhead.frame, true),
+                    scrollTrigger: st,
+                });
+
+                return () => animation.destroy && animation.destroy();
+            };
+
+            ctx && ctx.add ? ctx.add(createTween) : createTween();
+        });
+
+        return animation;
+    }
