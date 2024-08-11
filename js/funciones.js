@@ -272,20 +272,20 @@ Llamamos a la librería de Lenis para activar el smooth scroll
             }`,
             renderer: 'svg',
             target: '.animation',
-            path: './sources/square.mp4.lottie.json',
-            scrub: 0.1,
+            path: './sources/motherboardLoop.json',
+            scrub: 5,
         });
     }
 
 
     function LottieScrollTrigger(vars){
-        let playhead = {frame : -60},
+        let playhead = {frame : -35},
         target = gsap.utils.toArray(vars.target)[0],
         speeds = {slow: '+=2000', medium: '+=1000', fast: '+=500'},
         st = {
             trigger: '.trigger',
             end: speeds[vars.speed] || '+=1000',
-            scrub: 0.5,
+            scrub: 5,
             markers: false,
         },
 
