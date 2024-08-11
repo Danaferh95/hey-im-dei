@@ -110,62 +110,63 @@ section{
 
 .sect1-top{
     width: 100%;
-    max-width: 865px;
 }
 
-.sect1-top div{     
+.sect1-top div{
     text-align: right;
     font-size: 1.5em;
     margin: 10px 0;
+    padding-right: 5%;
 }
 .sect1-top div:first-child{
-    font-size: 2.5em;
+    font-size: 4.5em;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .sect1-top div:nth-child(2){
     text-align: left;
-    font-size: 2em;
+    font-size: 2.5em;
+    padding-left: 5%;
 }
 
 .sect1-bottom{
-    width: 100%;
-    max-width: 865px;
+    /* width: 50%; */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 350px;
+    justify-content: center;
+    background-color: var(--bg-color);
+    mix-blend-mode: difference;
+    backdrop-filter: blur(3px);
+    padding: 10px;
 }
 
 .sect1-bottom>div:first-child{
-    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--black);
 }
 
 .sect1-bottom>div:first-child div{
     text-align: center;
 }
 
-.sect1-bottom>div:first-child div h3{
+.sect1-bottom>div:first-child  h3{
     font-weight: 400;
     font-size: 1.5em;
 }
 
-.sect1-bottom>div:first-child div h3:nth-child(2){
+.sect1-bottom>div:first-child  h3:nth-child(2){
     box-sizing: border-box;
     padding-left: 15%;
 }
 
-.sect1-bottom>div:first-child div h1{
+.sect1-bottom>div:first-child  h1{
     font-size: 3em;
 }
 
-.sect1-bottom>div:last-child{
-    flex: 2;
-    height: 100%;
-    border: 1px solid var(--black);
-}
+
 
 .sect2 {
     height: 300vh;
@@ -388,7 +389,7 @@ section{
     }
 
     .sect1-bottom{
-        flex-direction: column;
+       
         margin: 20px 0px;
     }
 }
