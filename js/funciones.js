@@ -15,13 +15,6 @@ btnNav.forEach((obj) => {
 }); 
 
 
-/*---------------
-
-CV Download Button
-
--------------*/
-
-const cv_button = document.querySelector(".contact button");
 
 /*-----------------------------------
 
