@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroplayer</title>
+    <link rel="stylesheet" href="css/main-styles.css">
+</head>
+<body class="dark">
+    <header>
+        <div>
+           <a href="index.html"><img src="imgs/logoGrey.png" alt="Logo de la web DEI"></a>
+        </div>
+        <button class="abrir">
+            <span></span>   
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <button class="cerrar">x</button>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="work-video">
+        <video src="sources/webs/Retroplayer.mp4" autoplay loop muted></video>
+    </div>
+    <h2 class="work-title" >Retroplayer</h2>
+    <div class="work-text">
+        <div>
+            <div>
+                <p>This was a challenging Fullstack project for my final work at CEI Fullstack class.</p>
+                <p>The mission was to create a CRUD project, where the user can create, read, update and delete data. Also we had to use a framework, in this case I chose <strong>React</strong>.</p>
+            </div>
+            <img src="sources/webs/codigoReact.png" alt="">
+        </div>
+        <div>
+            <img src="sources/webs/googleDrive.png" alt="">
+            <div>
+                <p>So I decided to create a music player. For this I had to do some research on how I could get the player done through react. I found some youtube tutorials and some great github repositories of other mp3 players.</p>
+                <p>I also had to learn how to use the <strong>Google API</strong>, since I needed to store these mp3s somewhere, I thought of trying out the google Drive.</p>
+            </div>
+        </div>
+       <div>
+        <div>
+            <p>I then worked on the backend with <strong>Express and PostgresSQL</strong>. I made a conection so when the user uploaded an mp3 file to the google drive folder, then it would store the proxy link in the database. That way, when the user logs in again, they will have all their mp3's there! Also if they wanted to edit the name of the song they could do so, as well as delete it.</p>
+            <p>I kept track of the versions using <strong>Git</strong>, which I was so glad I did, since I uploaded all my work to Github and then my laptop crashed!! But 0 worries, I was able to get back on track by cloning my repository :) </p>
+           
+        </div>
+       </div>
+        
+    </div>
+</body>
+</html>

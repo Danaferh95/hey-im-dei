@@ -15,6 +15,14 @@ btnNav.forEach((obj) => {
 }); 
 
 
+/*---------------
+
+CV Download Button
+
+-------------*/
+
+const cv_button = document.querySelector(".contact button");
+
 /*-----------------------------------
 
 GSAP Animations on first section
@@ -236,3 +244,4 @@ Llamamos a la librería de Lenis para activar el smooth scroll
 
         return animation;
     }
+
