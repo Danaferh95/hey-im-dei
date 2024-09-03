@@ -8,8 +8,19 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Century Gothic';
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
 }
+
+h1, h2, h3{
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+}
+
 
 body {
     background-color: var(--white);
