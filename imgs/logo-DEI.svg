@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463.34 271.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Dosis-Regular, Dosis;
+        font-size: 16.29px;
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-2 {
+        letter-spacing: .05em;
+      }
+
+      .cls-3 {
+        letter-spacing: .13em;
+      }
+
+      .cls-4 {
+        letter-spacing: .14em;
+      }
+
+      .cls-5 {
+        letter-spacing: .14em;
+      }
+
+      .cls-6 {
+        fill: #a89a7e;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g>
+      <path class="cls-6" d="M25.41,268.66H.32v-51.43h25.09c45.71,0,82.9-37.19,82.9-82.9S71.12,51.43,25.41,51.43H0V0h25.41c74.07,0,134.33,60.26,134.33,134.33s-60.26,134.33-134.33,134.33Z"/>
+      <path class="cls-6" d="M319.47,268.66h-25.41c-74.07,0-134.33-60.26-134.33-134.33S219.99,0,294.06,0h25.09v51.43h-25.09c-45.71,0-82.9,37.19-82.9,82.9s37.19,82.9,82.9,82.9h25.41v51.43Z"/>
+      <rect class="cls-6" x="375.15" y="71.3" width="50.57" height="125.81" transform="translate(534.64 -266.23) rotate(90)"/>
+      <rect class="cls-6" x="268.44" y="108.77" width="50.66" height="50.66"/>
+    </g>
+    <text class="cls-1" transform="translate(332.13 228.58)"><tspan class="cls-3" x="0" y="0">D</tspan><tspan class="cls-5" x="11.24" y="0">YNAMIC</tspan><tspan class="cls-5"><tspan x="0" y="19.48">ENGINEERING</tspan></tspan><tspan class="cls-4" x="0" y="38.96">INTER</tspan><tspan class="cls-2" x="48.94" y="38.96">F</tspan><tspan class="cls-5" x="57.8" y="38.96">ACES</tspan></text>
+  </g>
+</svg>

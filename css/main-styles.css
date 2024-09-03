@@ -1,8 +1,8 @@
 :root {
-    --black: #000000;
+    --black: #232120;
     --white: #ffffff;
-    --blend-mode: difference;
-    --bg-color: var(--white);
+    --blend-mode: none;
+    --bg-color: var(--black);
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--white);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -92,7 +92,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     border-bottom: 0;
     transition: 200ms;
     padding-bottom: 0;
@@ -155,14 +155,14 @@ section {
     align-items: center;
     justify-content: center;
     background-color: var(--bg-color);
-    mix-blend-mode: difference;
     backdrop-filter: blur(3px);
     padding: 10px;
+    color: var(--white);
 }
 
 .sect1-bottom > div:first-child {
     padding: 10px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--white);
 }
 
 .sect1-bottom > div:first-child div {
@@ -199,7 +199,7 @@ section {
 
 .sect3,
 .works {
-    background-color: var(--bg-color);
+    background-color: var(--white);
 }
 
 .sect3-top {
@@ -224,7 +224,7 @@ section {
 }
 
 .rect {
-    background-color: var(--bg-color);
+    background-color: var(--black);
     mix-blend-mode: var(--blend-mode);
     position: absolute;
     z-index: -1;
