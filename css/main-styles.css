@@ -469,6 +469,11 @@ section {
         padding: 20px 0;
     }
 
+    nav ul li a {
+    color: var(--black);
+   
+    }
+
     section {
         padding: 100px 15px 0px 15px;
     }
